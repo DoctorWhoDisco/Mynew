@@ -1,0 +1,83 @@
+#include <iostream>
+#include <math.h>
+using namespace std;
+
+int ploshad(int a){
+    return (a*a);
+}
+int ploshad(int a, int b){
+    return ((a+b)*2);
+}
+float ploshad(float a, float b, float c){
+    float p = (a + b + c)/2; return (sqrt (p*(p-a)*(p-b)*(p-c)));
+}
+//
+int max(int a, int b){
+    if (a<b) return b; else return a;
+}
+int max(int a, int b, int c){
+    if (a<b){
+        if (c<b) return b;
+    }if (c<a) return a;
+    else return c;
+}
+int max(int a, int b, int c, int d){
+    if (a<b){
+        if (c<b){
+            if (d<b) return b;
+        }
+    }if (c<a){
+        if (d<a) return a;
+    }if (d<c) return c;
+    else return d;
+    
+}
+//
+int min(int a, int b){
+    if (a>b) return b; else return a;
+}
+int min(int a, int b, int c){
+    if (a>b){
+        if (c>b) return b;
+    }if (c>a) return a;
+    else return c;
+}
+int min(int a, int b, int c, int d){
+    if (a>b){
+        if (c>b){
+            if (d>b) return b;
+        }
+    }if (c>a){
+        if (d>a) return a;
+    }if (d>c) return c;
+    else return d;
+}
+//
+float sred(float a, float b){
+    return ((a+b)/2);
+}
+float sred(float a, float b, float c){
+    return ((a+b+c)/3);
+}
+float sred(float a, float b, float c, float d){
+    return ((a+b+c+d)/4);
+}
+int main()
+{
+    //
+    cout << "площадь квадрата со стороной 4 = " << ploshad(4) << endl;
+    cout << "площадь прямоугольника со сторонами 4; 7 = " << ploshad(4, 7) << endl;
+    cout << "площадь треугольника со сторонами 4; 7; 14 = " << ploshad(4, 7, 4) << endl;
+    //
+    cout << "максимум среди чисел 4; 7 = " << max(4, 7) << endl;
+    cout << "максимум среди чисел 7; 4; 14 = " << max(4, 7, 14) << endl;
+    cout << "максимум среди чисел 14; 21; 4; 7 = " << max(4, 7, 14, 21) << endl;
+    //
+    cout << "минимум среди чисел 4; 7 = " << min(4, 7) << endl;
+    cout << "минимум среди чисел 7; 14; 4 = " << min(4, 7, 14) << endl;
+    cout << "минимум среди чисел 21; 4; 7; 14 = " << min(4, 7, 14, 21) << endl;
+    //
+    cout << "среднее арифметическое чисел 4; 7 = " << sred(4, 7) << endl;
+    cout << "средне арифметическое чисел 14; 4; 7 = " << sred(4, 7, 14) << endl;
+    cout << "среднее арифметическое чисел 14; 4; 21; 7 = " << sred(4, 7, 14, 21) << endl;
+}
